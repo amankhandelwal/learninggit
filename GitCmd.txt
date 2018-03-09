@@ -185,3 +185,445 @@ Date:   Thu Mar 8 20:26:39 2018 +0530
 
     First commit
 
+
+
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   abc.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        GitCmd.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git add abc.txt
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git commit -m "Editing abc.txt again"
+[master 3258982] Editing abc.txt again
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git diff
+diff --git a/abc.txt b/abc.txt
+index 6676cb0..10fe845 100644
+--- a/abc.txt
++++ b/abc.txt
+@@ -1,3 +1,3 @@
+ i am ham and i like jam
+-yo bro
+-Hello World
+\ No newline at end of file
++yo dawg
++Ssup Homeboy
+\ No newline at end of file
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   abc.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        GitCmd.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git add .
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git commit
+Aborting commit due to empty commit message.
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git add .
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git commit -m "Editing"
+[master b3a0e84] Editing
+ 2 files changed, 189 insertions(+), 2 deletions(-)
+ create mode 100644 GitCmd.txt
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git diff
+diff --git a/abc.txt b/abc.txt
+index 10fe845..bae1837 100644
+--- a/abc.txt
++++ b/abc.txt
+@@ -1,3 +1,4 @@
+ i am ham and i like jam
+ yo dawg
+-Ssup Homeboy
+\ No newline at end of file
++Ssup Homeboy
++yo man
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git add abc.txt
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git diff
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git diff --staged
+diff --git a/abc.txt b/abc.txt
+index 10fe845..bae1837 100644
+--- a/abc.txt
++++ b/abc.txt
+@@ -1,3 +1,4 @@
+ i am ham and i like jam
+ yo dawg
+-Ssup Homeboy
+\ No newline at end of file
++Ssup Homeboy
++yo man
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git rm pqr.txt
+rm 'pqr.txt'
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   abc.txt
+        deleted:    pqr.txt
+
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git commit -m "Deleted File"
+[master 850fb65] Deleted File
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+ delete mode 100644 pqr.txt
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git mv xyz.txt pudding.txt
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ mkdir lovenotes
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git mv pudding.txt lovenotes/patty.txt
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        renamed:    xyz.txt -> lovenotes/patty.txt
+
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git add .
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git commit -m "Renamed Files"
+[master 7ebe21c] Renamed Files
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename xyz.txt => lovenotes/patty.txt (100%)
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   abc.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git commit -am "No Staging.Straight commit"
+[master 203f00c] No Staging.Straight commit
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   abc.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git diff
+diff --git a/abc.txt b/abc.txt
+index 84aa048..c724528 100644
+--- a/abc.txt
++++ b/abc.txt
+@@ -1,3 +1,2 @@
+-i am ham and i like jam
+-yo dawg
+-Ssup Homey
+\ No newline at end of file
++yo my man
++Ssup ?
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git checkout -- abc.txt
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git diff
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git add .
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   abc.txt
+
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git reset HEAD abc.txt
+Unstaged changes after reset:
+M       abc.txt
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   abc.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git commit -am "No Staging.Straight commit 2"
+[master 03c8ac4] No Staging.Straight commit 2
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git log
+commit 03c8ac454e98b39a0bbfb0c73062953441e82d5d
+Author: Aman Khandelwal <aman.khandelwal.howrah@gmail.com>
+Date:   Fri Mar 9 19:21:17 2018 +0530
+
+    No Staging.Straight commit 2
+
+commit 203f00c72baec2e76ce9b912b3610ef930f55a38
+Author: Aman Khandelwal <aman.khandelwal.howrah@gmail.com>
+Date:   Fri Mar 9 16:05:38 2018 +0530
+
+    No Staging.Straight commit
+
+commit 7ebe21c3c20ca2f3066cb82a466f614a9a626a78
+Author: Aman Khandelwal <aman.khandelwal.howrah@gmail.com>
+Date:   Fri Mar 9 15:59:07 2018 +0530
+
+    Renamed Files
+
+commit 850fb65030a6aa425adcc0739a39bc4502530794
+Author: Aman Khandelwal <aman.khandelwal.howrah@gmail.com>
+Date:   Fri Mar 9 15:54:17 2018 +0530
+
+    Deleted File
+
+commit b3a0e84a84b569e9bce7159bf35bf2d300b1f3ff
+Author: Aman Khandelwal <aman.khandelwal.howrah@gmail.com>
+Date:   Fri Mar 9 15:50:05 2018 +0530
+
+    Editing
+
+commit 32589820d7c8cc7e0a029cd1d36b2fc3f5d8d492
+Author: Aman Khandelwal <aman.khandelwal.howrah@gmail.com>
+Date:   Fri Mar 9 15:41:04 2018 +0530
+
+    Editing abc.txt again
+
+commit d2a7014624afbf254076d94cbe7ad1de06bcc86b
+Author: Aman Khandelwal <aman.khandelwal.howrah@gmail.com>
+Date:   Thu Mar 8 20:38:49 2018 +0530
+
+    Adding 3rd file and changed 1st file to repository
+
+commit a1f38c3a44a13e561ae2fd999cf43feb1f73afd9
+Author: Aman Khandelwal <aman.khandelwal.howrah@gmail.com>
+Date:   Thu Mar 8 20:37:38 2018 +0530
+
+    Adding 2nd file to repository
+
+commit d0f5c57c68f793adadea2f0d59de1d8d75093dcf
+Author: Aman Khandelwal <aman.khandelwal.howrah@gmail.com>
+Date:   Thu Mar 8 20:26:39 2018 +0530
+
+    First commit
+(END)
+
+    Editing
+
+commit 32589820d7c8cc7e0a029cd1d36b2fc3f5d8d492
+Author: Aman Khandelwal <aman.khandelwal.howrah@gmail.com>
+Date:   Fri Mar 9 15:41:04 2018 +0530
+
+    Editing abc.txt again
+
+commit d2a7014624afbf254076d94cbe7ad1de06bcc86b
+Author: Aman Khandelwal <aman.khandelwal.howrah@gmail.com>
+Date:   Thu Mar 8 20:38:49 2018 +0530
+
+    Adding 3rd file and changed 1st file to repository
+
+commit a1f38c3a44a13e561ae2fd999cf43feb1f73afd9
+Author: Aman Khandelwal <aman.khandelwal.howrah@gmail.com>
+Date:   Thu Mar 8 20:37:38 2018 +0530
+
+    Adding 2nd file to repository
+
+commit d0f5c57c68f793adadea2f0d59de1d8d75093dcf
+Author: Aman Khandelwal <aman.khandelwal.howrah@gmail.com>
+:
+
+    Editing
+
+commit 32589820d7c8cc7e0a029cd1d36b2fc3f5d8d492
+Author: Aman Khandelwal <aman.khandelwal.howrah@gmail.com>
+Date:   Fri Mar 9 15:41:04 2018 +0530
+
+    Editing abc.txt again
+
+commit d2a7014624afbf254076d94cbe7ad1de06bcc86b
+Author: Aman Khandelwal <aman.khandelwal.howrah@gmail.com>
+Date:   Thu Mar 8 20:38:49 2018 +0530
+
+    Adding 3rd file and changed 1st file to repository
+
+commit a1f38c3a44a13e561ae2fd999cf43feb1f73afd9
+Author: Aman Khandelwal <aman.khandelwal.howrah@gmail.com>
+Date:   Thu Mar 8 20:37:38 2018 +0530
+
+    Adding 2nd file to repository
+
+commit d0f5c57c68f793adadea2f0d59de1d8d75093dcf
+Author: Aman Khandelwal <aman.khandelwal.howrah@gmail.com>
+Date:   Thu Mar 8 20:26:39 2018 +0530
+
+    First commit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git checkout d2a701 -- abc.txt
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   abc.txt
+
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git commit -am "Undo Changes. Go to old version"
+[master a1e4935] Undo Changes. Go to old version
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ echo "STARTING GITHUB"
+STARTING GITHUB
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git remote add learning https://github.com/amankhandelwal/learninggit.git
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git remote
+learning
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git push -u learning master
+fatal: HttpRequestException encountered.
+   An error occurred while sending the request.
+
+Unhandled Exception: System.ObjectDisposedException: Cannot access a closed file.
+   at System.IO.__Error.FileNotOpen()
+   at System.IO.FileStream.Flush(Boolean flushToDisk)
+   at System.IO.StreamWriter.Flush(Boolean flushStream, Boolean flushEncoder)
+   at Microsoft.Alm.Git.Trace.Microsoft.Alm.Git.ITrace.Flush()
+   at Microsoft.Alm.Cli.Program.Die(String message)
+   at Microsoft.Alm.Cli.Program.Die(Exception exception)
+   at Microsoft.Alm.Cli.Program.Main(String[] args)
+Username for 'https://github.com': amankhandelwal
+Counting objects: 31, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (21/21), done.
+Writing objects: 100% (31/31), 4.19 KiB | 0 bytes/s, done.
+Total 31 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/amankhandelwal/learninggit.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from learning.
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$
