@@ -1,0 +1,187 @@
+
+User@Aman-PC MINGW64 ~/Desktop
+$ git config --global user.name "Aman Khandelwal"
+
+User@Aman-PC MINGW64 ~/Desktop
+$ git config --global user.email "aman.khandelwal.howrah@gmail.com"
+
+User@Aman-PC MINGW64 ~/Desktop
+$ git config --list
+core.symlinks=false
+core.autocrlf=true
+core.fscache=true
+color.diff=auto
+color.status=auto
+color.branch=auto
+color.interactive=true
+help.format=html
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+diff.astextplain.textconv=astextplain
+rebase.autosquash=true
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.required=true
+filter.lfs.process=git-lfs filter-process
+credential.helper=manager
+user.name=Aman Khandelwal
+user.email=aman.khandelwal.howrah@gmail.com
+
+User@Aman-PC MINGW64 ~/Desktop
+$ cd Tuna
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna
+$ pwd
+/c/Users/User/Desktop/Tuna
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna
+$ cd ~
+
+User@Aman-PC MINGW64 ~
+$ cd Des*
+
+User@Aman-PC MINGW64 ~/Desktop
+$ cd Tuna
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna
+$ git init
+Initialized empty Git repository in C:/Users/User/Desktop/Tuna/.git/
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git add .
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git commit -m "First commit"
+[master (root-commit) d0f5c57] First commit
+ 1 file changed, 2 insertions(+)
+ create mode 100644 abc.txt
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git log
+commit d0f5c57c68f793adadea2f0d59de1d8d75093dcf
+Author: Aman Khandelwal <aman.khandelwal.howrah@gmail.com>
+Date:   Thu Mar 8 20:26:39 2018 +0530
+
+    First commit
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git log --author="Aman"
+commit d0f5c57c68f793adadea2f0d59de1d8d75093dcf
+Author: Aman Khandelwal <aman.khandelwal.howrah@gmail.com>
+Date:   Thu Mar 8 20:26:39 2018 +0530
+
+    First commit
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   abc.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        pqr.txt
+        xyz.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git add second.txt
+fatal: pathspec 'second.txt' did not match any files
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git add xyz.txt
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   xyz.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   abc.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        pqr.txt
+
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git commit -m "Adding 2nd file to repository"
+[master a1f38c3] Adding 2nd file to repository
+ 1 file changed, 1 insertion(+)
+ create mode 100644 xyz.txt
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git log
+commit a1f38c3a44a13e561ae2fd999cf43feb1f73afd9
+Author: Aman Khandelwal <aman.khandelwal.howrah@gmail.com>
+Date:   Thu Mar 8 20:37:38 2018 +0530
+
+    Adding 2nd file to repository
+
+commit d0f5c57c68f793adadea2f0d59de1d8d75093dcf
+Author: Aman Khandelwal <aman.khandelwal.howrah@gmail.com>
+Date:   Thu Mar 8 20:26:39 2018 +0530
+
+    First commit
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   abc.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        pqr.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git add .
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git commit -m "Adding 3rd file and changed 1st file to repository"
+[master d2a7014] Adding 3rd file and changed 1st file to repository
+ 2 files changed, 2 insertions(+)
+ create mode 100644 pqr.txt
+
+User@Aman-PC MINGW64 ~/Desktop/Tuna (master)
+$ git log
+commit d2a7014624afbf254076d94cbe7ad1de06bcc86b
+Author: Aman Khandelwal <aman.khandelwal.howrah@gmail.com>
+Date:   Thu Mar 8 20:38:49 2018 +0530
+
+    Adding 3rd file and changed 1st file to repository
+
+commit a1f38c3a44a13e561ae2fd999cf43feb1f73afd9
+Author: Aman Khandelwal <aman.khandelwal.howrah@gmail.com>
+Date:   Thu Mar 8 20:37:38 2018 +0530
+
+    Adding 2nd file to repository
+
+commit d0f5c57c68f793adadea2f0d59de1d8d75093dcf
+Author: Aman Khandelwal <aman.khandelwal.howrah@gmail.com>
+Date:   Thu Mar 8 20:26:39 2018 +0530
+
+    First commit
+
